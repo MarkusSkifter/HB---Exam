@@ -1,0 +1,3 @@
+\section*{Question 1}
+
+The year $y_t$ does not need to be a separate state variable because it is fully determined by the two existing states. From equation (5), $y_t = t + b$, where $t$ is the agent's age (the period index tracked by the backward induction loop) and $b$ is the birth cohort (already a state variable). Given any state $(b, k_t)$ evaluated at period $t$, we can compute $y_t$ directly as $t + b$. Since the aggregate shock $\lambda(y_t) = 1 + \lambda_0 y_t$ depends only on $y_t$, it too is known without storing $y_t$ explicitly. Carrying $y_t$ as a state would expand the state space unnecessarily---it contains no information beyond what $(t, b)$ already provides.
