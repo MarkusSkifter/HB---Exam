@@ -4,7 +4,7 @@
 \[
   \pi_t = \pi_0 + \pi_1 \cdot \mathbf{1}(t \geq 10) \cdot \mathbf{1}(y_t \geq 8), \tag{7$'$}
 \]
-where $\pi_1 = 0.6$ and $y_t = t + b$. All other equations (1)--(6), (8)--(11) are unchanged. Because workers have perfect foresight, equation (7$'$) enters the Bellman equation from period 1 onward---workers in years before 8 already account for the future subsidy when optimising.
+where $\pi_1 = 0.6$ and $y_t = t + b$. All other equations are unchanged. Because workers have perfect foresight, equation (7$´$) enters the Bellman equation from period 1 onward, and workers in years before 8 already account for the future subsidy when optimising.
 
 \textit{Implementation note:} the PDF uses 1-indexed age ($t \in \{1,\ldots,T\}$) and year, while the code uses 0-indexed variables. To keep the threshold numbers readable and matching the PDF, the conditions are written as \texttt{(t+1) >= 10} and \texttt{(year+1) >= 8} in the code.
 
@@ -17,7 +17,7 @@ where $\pi_1 = 0.6$ and $y_t = t + b$. All other equations (1)--(6), (8)--(11) a
   \label{fig:q4_age}
 \end{figure}
 
-Average labor supply is nearly identical through age 9, with only a small anticipation effect visible under the reform. From age 10 onward---the first age at which the $\pi_1$ subsidy applies---labor supply falls as non-employment becomes attractive. The employment rate stays at 100\% in the baseline throughout; under the reform it begins to drop at age 10 and declines steadily to roughly 89\% by age 20---an 11 percentage-point gap driven by workers who prefer the higher $\pi_1$ subsidy over their diminishing after-tax wage late in the life cycle.
+Average labor supply is nearly identical through age 9, with only a small anticipation effect visible under the reform. From age 10 onward, where the first age at which the $\pi_1$ subsidy applies, we see that labor supply falls as non-employment becomes attractive. The employment rate stays at 100\% in the baseline throughout, but under the reform it begins to drop at age 10 and declines steadily to roughly 89\% by age 20. We thereby see an 11 percentage-point gap driven by workers who prefer the higher $\pi_1$ subsidy over their diminishing after-tax wage late in the life cycle.
 
 \paragraph{(c)}
 
@@ -28,4 +28,4 @@ Average labor supply is nearly identical through age 9, with only a small antici
   \label{fig:q4_govt}
 \end{figure}
 
-The two models track each other closely before year 8. From year 8 onward the reform diverges downward: the additional subsidy $\pi_1$ raises expenditures for older non-employed workers while the reduction in employment shrinks the tax base, so net government revenue falls relative to the baseline throughout the remainder of the simulation.
+The two models track each other closely before year 8. From year 8 onward the reform diverges downward, and the additional subsidy $\pi_1$ raises expenditures for older non-employed workers while the reduction in employment shrinks the tax base, so net government revenue falls relative to the baseline throughout the remainder of the simulation.
