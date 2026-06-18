@@ -1,6 +1,10 @@
 \section*{Question 7}
 
-\paragraph{(a)} We extend the model by adding the recession state $r_t \in \{0,1\}$ as a state variable. The aggregate shock function becomes $\lambda(y_t, r_t) = \lambda_0 + \lambda_1 r_t$, so equation (6) is modified to
+\paragraph{(a)} We extend the model by adding the recession state $r_t \in \{0,1\}$ as a state variable. Following the examiner's correction (the printed exam formula $\lambda(y_t,r_t)=\lambda_0+\lambda_1 r_t$ was a typo), the aggregate shock keeps its original structure and simply adds the recession term:
+\[
+  \lambda(y_t, r_t) = 1 + \lambda_0 y_t + \lambda_1 r_t,
+\]
+so equation (6) becomes
 \[
   w_t = \exp(\alpha_b + \gamma k_t)\cdot(1 + \lambda_0 y_t + \lambda_1 r_t). \tag{6$'$}
 \]
