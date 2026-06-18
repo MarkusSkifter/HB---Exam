@@ -1,10 +1,10 @@
 \section*{Question 2}
 
-We solve and simulate two model variants: the baseline with $\tau = 0.3$ and a counterfactual with no labor income tax ($\tau = 0$). Following the exam specification, we set the cohort wage constants to $(\alpha_0,\ldots,\alpha_4) = (0.7, 0.8, 0.9, 1.1, 1.2)$ and draw initial human capital as $\tilde{k}_{i,0} \sim N(0.5, 1)$ (truncated to $[0,3]$). Both differ slightly from the starter code's defaults (a linear interpolation for $\alpha$ and $N(0,1)$ for $\tilde{k}_{i,0}$); we use the PDF values throughout.
+We solve and simulate two model variants: the baseline with $\tau = 0.3$ and a counterfactual with no labor income tax ($\tau = 0$). Following the exam specification, we set the cohort wage constants to $(\alpha_0,\ldots,\alpha_4) = (0.7, 0.8, 0.9, 1.1, 1.2)$ and draw initial human capital as $\tilde{k}_{i,0} \sim N(0.5, 1)$, to use the PDF values throughout.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{../figures/q2_age_profiles.pdf}
   \caption{Age profiles for $\tau = 0.3$ (baseline) and $\tau = 0$ (no-tax counterfactual).}
   \label{fig:q2}
 \end{figure}
-The tax \emph{raises} labor supply throughout the life cycle: the $\tau = 0.3$ profile lies above $\tau = 0$ at every age (Figure~\ref{fig:q2}a). With $\rho = 1.5 > 1$ the income effect dominates the substitution effect, so a lower net wage induces workers to supply more hours to defend their consumption. The employment rate is $100\%$ in both economies: $\pi_0 = 0.5$ is never attractive enough to pull anyone out of work at these tax rates, as the Laffer analysis in Question~3 confirms. Consumption is nonetheless higher under $\tau = 0$ at every age, since workers retain their full earnings, and the $(1-\tau)$ wedge outweighs the modestly higher hours and human capital that the tax induces.
+The tax \emph{raises} labor supply throughout the life cycle: the $\tau = 0.3$ profile lies above $\tau = 0$ at every age (Figure~\ref{fig:q2}a). With $\rho = 1.5 > 1$ the income effect dominates the substitution effect, so a lower net wage induces workers to supply more hours to defend their consumption. The employment rate is $100\%$ in both economies, and $\pi_0 = 0.5$ is never attractive enough to pull anyone out of work at these tax rates, as the Laffer analysis in Question~3 confirms. Consumption is nonetheless higher under $\tau = 0$ at every age, since workers retain their full earnings, and the $(1-\tau)$ wedge outweighs the modestly higher hours and human capital that the tax induces.
