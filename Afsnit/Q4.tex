@@ -6,6 +6,8 @@
 \]
 where $\pi_1 = 0.6$ and $y_t = t + b$. All other equations (1)--(6), (8)--(11) are unchanged. Because workers have perfect foresight, equation (7$'$) enters the Bellman equation from period 1 onward---workers in years before 8 already account for the future subsidy when optimising.
 
+\textit{Implementation note:} the PDF uses 1-indexed age ($t \in \{1,\ldots,T\}$) and year, while the code uses 0-indexed variables. To keep the threshold numbers readable and matching the PDF, the conditions are written as \texttt{(t+1) >= 10} and \texttt{(year+1) >= 8} in the code.
+
 \paragraph{(b)}
 
 \begin{figure}[h!]
