@@ -1,0 +1,73 @@
+% IMPORTANT! Compile with XeLaTeX or LuaLaTeX + Biber
+\documentclass[12pt]{article}
+
+\usepackage{KUstyle}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage[english]{babel}
+
+% Bibliography
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  natbib=true,
+  uniquename=false,
+  uniquelist=false
+]{biblatex}
+\addbibresource{../Afsnit/library.bib}
+
+\usepackage[
+  colorlinks=false,
+  pdfborder={0 0 1},
+  citebordercolor={0 1 0},
+  linkbordercolor={0 1 0},
+  urlbordercolor={0 1 0}
+]
+
+\setmainfont{Arial}
+
+% Front page info
+\ptype{Household behaviour over the lifecycle}
+\author{Student number: Ths411}
+\title{Assignment 3}
+\subtitle{l}
+\date{June 2026}
+
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\maketitle
+
+\onehalfspacing
+
+{\fontfamily{ptm}\selectfont
+
+\begin{center}
+  {\large \textbf{}}\\[0.6em]
+  
+\end{center}
+
+\vspace{0.3em}
+
+\begin{abstract}
+\noindent
+
+\end{abstract}
+
+\bigskip
+
+\input{Afsnit/Appendix}
+
+\newpage
+
+\printbibliography
+
+} % closes {\fontfamily{ptm}\selectfont
+
+\end{document}
