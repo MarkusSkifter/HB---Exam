@@ -4,18 +4,18 @@
 \[
   c_t = \bigl(1 - \tau - \tau_1 \cdot \mathbf{1}(y_t \geq 8)\bigr)\, w_t\, l_t + \pi_t \cdot \mathbf{1}(l_t = 0), \tag{3$'$}
 \]
-where $\tau_1 \geq 0$ is the additional tax rate applied from year 8 onward. All other equations are unchanged. The government budget term becomes $G_{i,t} = (\tau + \tau_1 \cdot \mathbf{1}(y_{i,t} \geq 8))\,w_{i,t}\,l_{i,t} - \pi_t\cdot\mathbf{1}(l_{i,t}=0)$.
+where $\tau_1 \geq 0$ is the additional tax rate applied from year 8 onward ($y_t \geq 8$ in 1-indexed PDF notation, implemented as \texttt{(year+1) >= 8} in 0-indexed code). All other equations are unchanged. The government budget term becomes $G_{i,t} = (\tau + \tau_1 \cdot \mathbf{1}(y_{i,t} \geq 8))\,w_{i,t}\,l_{i,t} - \pi_t\cdot\mathbf{1}(l_{i,t}=0)$.
 
 \paragraph{(b)}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.65\textwidth]{../figures/q5_tau1_search.pdf}
-  \caption{$G(\theta)$ as a function of $\tau_1 \in [0.015,\, 0.3]$ with $\pi_1 = 0.6$ fixed. $G_3 = 811{,}084$ is marked by the dashed line.}
+  \caption{$G(\theta)$ as a function of $\tau_1 \in [0.015,\, 0.025]$ with $\pi_1 = 0.6$ fixed. $G_3 = 811{,}084$ is marked by the dashed line. The non-monotone pattern reflects discrete threshold crossings: at certain $\tau_1$ values marginal workers flip from employment to non-employment, causing discontinuous drops in the tax base.}
   \label{fig:q5_search}
 \end{figure}
 
-$G(\theta)$ is monotonically decreasing in $\tau_1$ throughout the search interval, so the solution is the boundary $\tau_1^* = 0.015$, giving $G(\theta_5^*) = 734{,}557$ (a remaining gap of $76{,}527$ relative to $G_3$). The reform's retirement subsidy creates a highly elastic margin: workers near the employment threshold, already sensitized by $\pi_1 = 0.6$, exit employment when $\tau_1$ rises, shrinking the tax base faster than the higher rate raises per-worker revenue. No $\tau_1$ in this range can restore budget balance.
+$G(\theta)$ reaches its maximum within the search interval at $\tau_1^* = 0.0235$, giving $G(\theta_5^*) = 742{,}744$ (a remaining gap of $68{,}340$ relative to $G_3$). The curve is non-monotone: a rising direct-revenue effect is interrupted by discrete threshold crossings where bundles of marginal workers exit employment, sharply reducing the tax base. Even at $\tau_1^* = 0.0235$, the reform cannot close the budget gap because the retirement subsidy $\pi_1 = 0.6$ induces large-scale labor-force exit that no moderate additional tax can fully offset.
 
 \paragraph{(c)} We measure individual welfare as realized discounted lifetime utility:
 \[
@@ -28,8 +28,8 @@ where $U$ is as in equation (9). This is computed directly from the simulated co
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{../figures/q5_welfare_by_cohort.pdf}
-  \caption{Welfare analysis by birth cohort under $\theta_5^*$ relative to the baseline. \textit{(a)} Mean welfare gain is negative for all cohorts---the reform is welfare-reducing on average. \textit{(b)} Only cohort $b=0$ has a meaningful share (24.4\%) that is better off; these are the low-wage workers who find it optimal to retire and collect the $\pi_1$ subsidy. Cohorts $b=1$--$4$ have near-zero shares better off ($\leq 0.5\%$), as their higher wages ($\alpha_b$ rises with $b$) make continued employment preferable even after the extra tax.}
+  \caption{Welfare analysis by birth cohort under $\theta_5^*$ relative to the baseline. \textit{(a)} Mean welfare gain is negative for all cohorts---the reform is welfare-reducing on average. \textit{(b)} Only cohort $b=0$ has a meaningful share (23.0\%) that is better off; these are the low-wage workers who find it optimal to retire and collect the $\pi_1$ subsidy. Cohorts $b=1$--$4$ have near-zero or zero shares better off, as their higher wages make continued employment preferable even after the extra tax.}
   \label{fig:q5_welfare}
 \end{figure}
 
-The reform is not Pareto-improving for any cohort. It redistributes toward the lowest-wage workers who switch to retirement, but the additional tax $\tau_1 = 0.015$ combined with the reduced tax base makes the majority of workers worse off. Higher-wage cohorts ($b=2,3,4$) are almost uniformly hurt: they continue to work, pay the extra tax, and receive no subsidy benefit.
+The reform is not Pareto-improving for any cohort. Only 23\% of the lowest-wage cohort ($b=0$) gains, as they switch to non-employment and collect $\pi_1$. The remaining 77\% in $b=0$ and essentially all workers in $b=1$--$4$ lose: they remain employed, pay $\tau_1$ from year 8, but receive no retirement subsidy. Higher-wage cohorts ($b=2,3,4$) are almost uniformly hurt since their $\alpha_b$ values make continued employment optimal at any plausible $\tau_1$. The mean welfare losses range from $-0.27$ (cohort $b=2$) to $-0.61$ (cohort $b=0$, averaging over beneficiaries and losers).

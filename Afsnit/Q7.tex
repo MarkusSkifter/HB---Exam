@@ -1,0 +1,40 @@
+\section*{Question 7}
+
+\paragraph{(a)} We extend the model by adding the recession state $r_t \in \{0,1\}$ as a state variable. The aggregate shock function becomes $\lambda(y_t, r_t) = \lambda_0 + \lambda_1 r_t$, so equation (6) is modified to
+\[
+  w_t = \exp(\alpha_b + \gamma k_t)\cdot(1 + \lambda_0 y_t + \lambda_1 r_t). \tag{6$'$}
+\]
+All other equations (1)--(5), (7)--(11) are unchanged. The state space expands from $(b, k_t)$ to $(b, k_t, r_t)$, and the Bellman equation (11) is now
+\[
+  V(t,b,k,r) = \max_{l \in [0,1]} \left\{ U(c,l) + \beta \sum_{r' \in \{0,1\}} \Pr(r_{t+1}=r'\mid r_t=r)\sum_{\varepsilon} p_\varepsilon \, V(t+1,b,k',r') \right\},
+\]
+where $k' = \bigl((1-\delta)k + l\bigr)\varepsilon$, $c$ is given by (3), and transition probabilities follow Table~1. The solution requires solving for $V$ and $l^*$ over the expanded grid $(t, b, k, r)$, integrating simultaneously over both the recession transition and the human capital shock.
+
+\paragraph{(b)} We solve and simulate the model with $\lambda_1 = -0.5$. The recession path $\{r_y\}$ from Figure~1 is applied identically to all workers in year $y$:
+\[
+  r_y = [0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,1], \quad y=1,\ldots,24.
+\]
+
+\paragraph{(c)}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/q7_age_profiles.pdf}
+  \caption{Age profiles under $\lambda_1 = -0.5$ (solid) vs.\ baseline $\lambda_1 = 0$ (dashed). \textit{(a)} Average labor supply is lower under recessions because wages fall, reducing the incentive to work. The gap widens with age as recessions compound through the human capital accumulation process. \textit{(b)} Average consumption is also lower, reflecting both reduced wages and reduced human capital. \textit{(c)} Fraction of person-periods spent in recession by age reflects the overlap between each cohort's life cycle and the recession years in the path.}
+  \label{fig:q7_age}
+\end{figure}
+
+\paragraph{(d)}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/q7_year_profiles.pdf}
+  \caption{Year profiles under $\lambda_1 = -0.5$ (solid) vs.\ baseline (dashed). \textit{(a)} Labor supply drops sharply in recession years (years 4--5, 10--11, 18, 23--24) and recovers in non-recession years. \textit{(b)} Consumption dips in recession years and exhibits a slower recovery than labor supply, as human capital takes time to rebuild after recession-induced reductions in hours. \textit{(c)} Recession indicator: bars mark years with $r_y=1$.}
+  \label{fig:q7_year}
+\end{figure}
+
+\paragraph{(e)} The age and year profiles reveal different aspects of the same recession effect. The \textit{year profile} reflects the direct, synchronised impact: all workers in a recession year experience the same wage drop, so average hours and consumption fall together and contemporaneously with the recession indicator. This is a \textit{cohort-aggregation} effect: because all birth cohorts are observed simultaneously, the year profile mixes workers of different ages and human capital levels.
+
+The \textit{age profile} reflects a more subtle \textit{life-cycle} effect. Workers at different ages were exposed to the recession years at different points in their life cycle. Those who entered the labour market during recession years have permanently lower human capital (the negative $\lambda_1$ shock reduced their early-career wages and thus hours), so their wages and consumption remain lower even in non-recession periods. This explains why the age-profile gap between the recession model and the baseline persists and may even widen over the life cycle even at non-recession ages.
+
+A key difference is that the year-profile gap closes in non-recession years (within-year wages recover to baseline), while the age-profile gap does not fully close (past human capital deficits carry forward). This distinction --- contemporaneous wage effects versus persistent human capital effects --- is the central difference between viewing recessions over time versus over the life cycle.
